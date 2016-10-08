@@ -1,68 +1,79 @@
 import Foundation
 
-protocol Copyable: class {
+public protocol Copyable: class {
     init(fromCopyOf: Self)
     func copy() -> Self
 }
 
-enum InjectorScope {
+public enum InjectorScope {
     case newInstance
     case singleton
+    case custom(rule: ()->Bool)
 }
 
-private func key<T: Any>(forType type: T.Type) -> String {
-    return "\(type)"
+public extension String {
+    public static func from<T: Any>(type: T.Type) -> String {
+        return "\(type)"
+    }
 }
 
-class Injector {
+public class Injector {
     
-    var dependencies = [String: Any]()
+    var dependencies: [String: Any]
     
-    func addDependency<T: Any>(forType type: T.Type, withInstance instance: T) {
-        dependencies[key(forType: type)] = instance
+    public init() {
+        dependencies = [String: Any]()
     }
     
-    func addDependency<T: Any>(forType type: T.Type, withConfig config: @escaping ()->T) {
-        dependencies[key(forType: type)] = config
+    public func addDependency<T: Any>(for type: T.Type, withInstance instance: T) {
+        dependencies[String.from(type: type)] = instance
     }
     
-    func getInstance<T: Any>(forType type: T.Type) -> T? {
+    public func addDependency<T: Any>(for type: T.Type, withConfig config: @escaping (Injector)->T) {
+        dependencies[String.from(type: type)] = config
+    }
+    
+    public func getInstance<T: Any>(for type: T.Type) -> T? {
         
-        if let dependency = dependencies[key(forType: type)] as? T {
+        if let dependency = dependencies[String.from(type: type)] as? T {
             return dependency
-        } else if let config = dependencies[key(forType: type)] as? ()->T {
-            return config()
+        } else if let config = dependencies[String.from(type: type)] as? (Injector)->T {
+            return config(self)
         }
         
         return nil
     }
     
-    func removeDependency<T: Any>(forType type: T.Type) {
-        _ = dependencies.removeValue(forKey: key(forType: type))
+    public func removeDependency<T: Any>(for type: T.Type) {
+        _ = dependencies.removeValue(forKey: String.from(type: type))
     }
 }
 
+// MARK: Class injection methods
+
 extension Injector {
     
-    func addDependency<T: Copyable>(forType type: T.Type, withInstance instance: T) {
-        addDependency(forType: type, withInstance: instance, andScope: .newInstance)
+    public func addDependency<T: Copyable>(for type: T.Type, withInstance instance: T) {
+        addDependency(for: type, withInstance: instance, andScope: .newInstance)
     }
     
-    func addDependency<T: Copyable>(forType type: T.Type, withInstance instance: T, andScope scope: InjectorScope) {
-        dependencies[key(forType: type)] = (type: type, instance: instance, scope: scope)
+    public func addDependency<T: Copyable>(for type: T.Type, withInstance instance: T, andScope scope: InjectorScope) {
+        dependencies[String.from(type: type)] = (instance: instance, scope: scope)
     }
     
-    func getInstance<T: Copyable>(forType type: T.Type) -> T? {
+    public func getInstance<T: Copyable>(for type: T.Type) -> T? {
         
-        if let dependency = dependencies[key(forType: type)] as? T {
-            return dependency
-        } else if let config = dependencies[key(forType: type)] as? ()->T {
+        if let config = dependencies[String.from(type: type)] as? ()->T {
             return config()
-        } else if let definition = dependencies[key(forType: type)] as? (type: T.Type, instance: T, scope: InjectorScope) {
-            if definition.scope == .newInstance {
-                return definition.instance.copy()
-            } else {
-                return definition.instance
+        } else if let dependency = dependencies[String.from(type: type)] as? (instance: T, scope: InjectorScope) {
+            
+            switch dependency.scope {
+            case .singleton:
+                return dependency.instance
+            case .newInstance:
+                return dependency.instance.copy()
+            case let .custom(rule):
+                return rule() ? dependency.instance : dependency.instance.copy()
             }
         }
         

@@ -410,6 +410,7 @@
 				9D036D1C1DA9333400C27AA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D036D1D1DA9333400C27AA3 /* Build configuration list for PBXNativeTarget "AutoInjectorTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +419,7 @@
 				9D036D1F1DA9333400C27AA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
