@@ -11,19 +11,25 @@
 		9DBF56D41DA980B800C4A769 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF56D31DA980B800C4A769 /* ViewController.swift */; };
 		9DBF56D91DA980B800C4A769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DBF56D81DA980B800C4A769 /* Assets.xcassets */; };
 		9DBF56DC1DA980B800C4A769 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DBF56DA1DA980B800C4A769 /* LaunchScreen.storyboard */; };
-		9DBF56E71DA980B800C4A769 /* AutoInjectorTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF56E61DA980B800C4A769 /* AutoInjectorTestAppTests.swift */; };
 		9DBF56FC1DA9812000C4A769 /* AutoInjector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DBF56FB1DA9812000C4A769 /* AutoInjector.framework */; };
 		9DBF57001DA9874E00C4A769 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DBF56FF1DA9874E00C4A769 /* ViewController.xib */; };
 		9DBF57021DA987D500C4A769 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF57011DA987D500C4A769 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9DBF56E31DA980B800C4A769 /* PBXContainerItemProxy */ = {
+		9DBF57081DA9CE9800C4A769 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9DBF56C61DA980B800C4A769 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9DBF56CD1DA980B800C4A769;
-			remoteInfo = AutoInjectorTestApp;
+			containerPortal = 9DBF57031DA9CE9800C4A769 /* AutoInjector.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D036D061DA9333400C27AA3;
+			remoteInfo = AutoInjector;
+		};
+		9DBF570A1DA9CE9800C4A769 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DBF57031DA9CE9800C4A769 /* AutoInjector.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D036D0F1DA9333400C27AA3;
+			remoteInfo = AutoInjectorTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -34,12 +40,10 @@
 		9DBF56D81DA980B800C4A769 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DBF56DB1DA980B800C4A769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DBF56DD1DA980B800C4A769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9DBF56E21DA980B800C4A769 /* AutoInjectorTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoInjectorTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DBF56E61DA980B800C4A769 /* AutoInjectorTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoInjectorTestAppTests.swift; sourceTree = "<group>"; };
-		9DBF56E81DA980B800C4A769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DBF56FB1DA9812000C4A769 /* AutoInjector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoInjector.framework; path = "../Build/Products/Debug-iphonesimulator/AutoInjector.framework"; sourceTree = "<group>"; };
 		9DBF56FF1DA9874E00C4A769 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		9DBF57011DA987D500C4A769 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		9DBF57031DA9CE9800C4A769 /* AutoInjector.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AutoInjector.xcodeproj; path = ../AutoInjector/AutoInjector.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,13 +55,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9DBF56DF1DA980B800C4A769 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -65,7 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				9DBF56D01DA980B800C4A769 /* AutoInjectorTestApp */,
-				9DBF56E51DA980B800C4A769 /* AutoInjectorTestAppTests */,
 				9DBF56CF1DA980B800C4A769 /* Products */,
 				9DBF56FA1DA9812000C4A769 /* Frameworks */,
 			);
@@ -75,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				9DBF56CE1DA980B800C4A769 /* AutoInjectorTestApp.app */,
-				9DBF56E21DA980B800C4A769 /* AutoInjectorTestAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,21 +89,22 @@
 			path = AutoInjectorTestApp;
 			sourceTree = "<group>";
 		};
-		9DBF56E51DA980B800C4A769 /* AutoInjectorTestAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				9DBF56E61DA980B800C4A769 /* AutoInjectorTestAppTests.swift */,
-				9DBF56E81DA980B800C4A769 /* Info.plist */,
-			);
-			path = AutoInjectorTestAppTests;
-			sourceTree = "<group>";
-		};
 		9DBF56FA1DA9812000C4A769 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9DBF57031DA9CE9800C4A769 /* AutoInjector.xcodeproj */,
 				9DBF56FB1DA9812000C4A769 /* AutoInjector.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9DBF57041DA9CE9800C4A769 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DBF57091DA9CE9800C4A769 /* AutoInjector.framework */,
+				9DBF570B1DA9CE9800C4A769 /* AutoInjectorTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,24 +127,6 @@
 			productReference = 9DBF56CE1DA980B800C4A769 /* AutoInjectorTestApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9DBF56E11DA980B800C4A769 /* AutoInjectorTestAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9DBF56EE1DA980B800C4A769 /* Build configuration list for PBXNativeTarget "AutoInjectorTestAppTests" */;
-			buildPhases = (
-				9DBF56DE1DA980B800C4A769 /* Sources */,
-				9DBF56DF1DA980B800C4A769 /* Frameworks */,
-				9DBF56E01DA980B800C4A769 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9DBF56E41DA980B800C4A769 /* PBXTargetDependency */,
-			);
-			name = AutoInjectorTestAppTests;
-			productName = AutoInjectorTestAppTests;
-			productReference = 9DBF56E21DA980B800C4A769 /* AutoInjectorTestAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -164,12 +142,6 @@
 						DevelopmentTeam = H2983HKDVJ;
 						ProvisioningStyle = Automatic;
 					};
-					9DBF56E11DA980B800C4A769 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = H2983HKDVJ;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 9DBF56CD1DA980B800C4A769;
-					};
 				};
 			};
 			buildConfigurationList = 9DBF56C91DA980B800C4A769 /* Build configuration list for PBXProject "AutoInjectorTestApp" */;
@@ -183,13 +155,35 @@
 			mainGroup = 9DBF56C51DA980B800C4A769;
 			productRefGroup = 9DBF56CF1DA980B800C4A769 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9DBF57041DA9CE9800C4A769 /* Products */;
+					ProjectRef = 9DBF57031DA9CE9800C4A769 /* AutoInjector.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9DBF56CD1DA980B800C4A769 /* AutoInjectorTestApp */,
-				9DBF56E11DA980B800C4A769 /* AutoInjectorTestAppTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9DBF57091DA9CE9800C4A769 /* AutoInjector.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AutoInjector.framework;
+			remoteRef = 9DBF57081DA9CE9800C4A769 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9DBF570B1DA9CE9800C4A769 /* AutoInjectorTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AutoInjectorTests.xctest;
+			remoteRef = 9DBF570A1DA9CE9800C4A769 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9DBF56CC1DA980B800C4A769 /* Resources */ = {
@@ -199,13 +193,6 @@
 				9DBF56DC1DA980B800C4A769 /* LaunchScreen.storyboard in Resources */,
 				9DBF57001DA9874E00C4A769 /* ViewController.xib in Resources */,
 				9DBF56D91DA980B800C4A769 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9DBF56E01DA980B800C4A769 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,23 +209,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9DBF56DE1DA980B800C4A769 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9DBF56E71DA980B800C4A769 /* AutoInjectorTestAppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9DBF56E41DA980B800C4A769 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9DBF56CD1DA980B800C4A769 /* AutoInjectorTestApp */;
-			targetProxy = 9DBF56E31DA980B800C4A769 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9DBF56DA1DA980B800C4A769 /* LaunchScreen.storyboard */ = {
@@ -369,36 +340,6 @@
 			};
 			name = Release;
 		};
-		9DBF56EF1DA980B800C4A769 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = H2983HKDVJ;
-				INFOPLIST_FILE = AutoInjectorTestAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gosh.AutoInjectorTestAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoInjectorTestApp.app/AutoInjectorTestApp";
-			};
-			name = Debug;
-		};
-		9DBF56F01DA980B800C4A769 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = H2983HKDVJ;
-				INFOPLIST_FILE = AutoInjectorTestAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gosh.AutoInjectorTestAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoInjectorTestApp.app/AutoInjectorTestApp";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -418,14 +359,7 @@
 				9DBF56ED1DA980B800C4A769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		9DBF56EE1DA980B800C4A769 /* Build configuration list for PBXNativeTarget "AutoInjectorTestAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9DBF56EF1DA980B800C4A769 /* Debug */,
-				9DBF56F01DA980B800C4A769 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

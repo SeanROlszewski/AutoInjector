@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:AutoInjectorTestApp/AutoInjectorTestApp.xcodeproj">
+      location = "group:AutoInjector/AutoInjector.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:AutoInjector.xcodeproj">
+      location = "group:AutoInjectorTestApp/AutoInjectorTestApp.xcodeproj">
    </FileRef>
 </Workspace>
