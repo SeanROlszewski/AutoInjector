@@ -63,9 +63,7 @@ extension Injector {
     
     public func getInstance<T: Copyable>(for type: T.Type) -> T? {
         
-        if let config = dependencies[String.from(type: type)] as? ()->T {
-            return config()
-        } else if let dependency = dependencies[String.from(type: type)] as? (instance: T, scope: InjectorScope) {
+        if let dependency = dependencies[String.from(type: type)] as? (instance: T, scope: InjectorScope) {
             
             switch dependency.scope {
             case .singleton:
