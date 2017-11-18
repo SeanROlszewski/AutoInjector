@@ -2,35 +2,37 @@
 A dead simple dependency injector in Swift with scoped bindings, ala [Blindside](https://github.com/jbsf/blindside)
 
 # Example
-    
-    import UIKit
-    import AutoInjector
 
-    @UIApplicationMain
-    class AppDelegate: UIResponder, UIApplicationDelegate {
+```swift 
+import UIKit
+import AutoInjector
 
-        var window: UIWindow?
-        var injector = Injector()
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
-        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    var window: UIWindow?
+    var injector = Injector()
 
-            registerDependencies()
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-            window = UIWindow(frame: UIScreen.main.bounds)
-            window?.rootViewController = injector.getInstance(for: ViewController.self)
-            window?.makeKeyAndVisible()
+        registerDependencies()
 
-            return true
-        }
-    
-        private func registerDependencies() {
-            injector.addDependency(for: Guitar.self, withInstance: Guitar(brand: "Gibson"))
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = injector.getInstance(for: ViewController.self)
+        window?.makeKeyAndVisible()
 
-            injector.addDependency(for: ViewController.self) {
-                injector in
-                let vc = ViewController(nibName: String.from(type: ViewController.self), bundle: nil)
-                vc.guitar = injector.getInstance(for: Guitar.self)
-                return vc
-            }
+        return true
+    }
+
+    private func registerDependencies() {
+        injector.addDependency(for: Guitar.self, withInstance: Guitar(brand: "Gibson"))
+
+        injector.addDependency(for: ViewController.self) {
+            injector in
+            let vc = ViewController(nibName: String.from(type: ViewController.self), bundle: nil)
+            vc.guitar = injector.getInstance(for: Guitar.self)
+            return vc
         }
     }
+}
+```
